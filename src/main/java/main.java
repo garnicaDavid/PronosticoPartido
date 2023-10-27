@@ -14,7 +14,7 @@ public class main {
 		//Partido p1= new Partido(Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) 
 		 int indice = -1;
 		 int indiceP = -1;
-		 String [] renglon= new String [4];
+		 String [] renglon= new String [4];//notar que no es un nro mágico, es la cantidad de columnas del archivo que voy a leer, lo define el formato del archivo que planeo leer
 		 List <Equipo> paises=new ArrayList<Equipo>();
 		 
 		 String equipoa="";
