@@ -6,6 +6,11 @@ public class Pronostico {
 	
 	
 	
+	public Pronostico(Partido partido2, Equipo equipo2, Enum estado) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public Partido getPartido() {
 		return partido;
 	}
