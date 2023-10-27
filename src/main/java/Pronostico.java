@@ -6,7 +6,7 @@ public class Pronostico {
 	
 	
 	
-	public Pronostico(Partido partido2, Equipo equipo2, Enum estado) {
+	public Pronostico(Partido partido, Equipo equipo, Enum resultado) {
 		// TODO Auto-generated constructor stub
 	}
 

@@ -4,19 +4,18 @@ public class Equipo {
 	private String descripcion;
 	
 	public Equipo(String nombre, String descripcion) {
-		super();
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
 	
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	public String getDescripcion() {
-		return descripcion;
+		return this.descripcion;
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
