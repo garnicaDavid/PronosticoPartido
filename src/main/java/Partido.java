@@ -1,3 +1,7 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Iterator;
 
 public class Partido {
 	private Equipo equipo1;
@@ -37,5 +41,45 @@ public class Partido {
 	}
 	public void setGolesEquipo2(int golesEquipo2) {
 		this.golesEquipo2 = golesEquipo2;
+	}
+	
+	public Partido metodoPartido() {
+		Equipo equipo2;
+		Equipo equipo1;
+		String [] renglon;
+		Partido partido1 = null;
+try {
+	for(String linea:Files.readAllLines(Paths.get("resultados.txt"))){
+				
+				renglon = linea.split(" ");
+				 
+					 equipo1 = new Equipo (renglon[0] ,"equipo de futbol");   
+					 equipo2 = new Equipo (renglon[3] ,"equipo de futbol");
+		 partido1 = new Partido (equipo1,equipo2,Integer.parseInt(renglon[1]) ,Integer.parseInt(renglon[2]));
+	
+	}
+	
+} catch (IOException e) {
+	e.printStackTrace();
+}
+return partido1;
+}
+
+	@Override
+	public String toString() {
+		return "Partido [equipo1=" + equipo1 + ", equipo2=" + equipo2 + ", golesEquipo1=" + golesEquipo1
+				+ ", golesEquipo2=" + golesEquipo2 + "]";
+	}
+	
+	public ResultadoEnum resultado() {
+		
+		if (golesEquipo1 > golesEquipo2) {
+	        return ResultadoEnum.ganador;
+	    } else if (golesEquipo2 > golesEquipo1) {
+	        return ResultadoEnum.perdedor;
+	    } else {
+	        return ResultadoEnum.empate;
+			
+	    }
 	}
 }

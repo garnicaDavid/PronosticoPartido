@@ -9,102 +9,47 @@ public class main {
 	public static void main(String[] args) {
 		
 		
-		//Equipo e1
+		Partido partido1 = new Partido(null, null, 0, 0);
+		System.out.println(partido1.metodoPartido().getEquipo1().getNombre());
 		
-		//Partido p1= new Partido(Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) 
-		 int indice = -1;
-		 int indiceP = -1;
-		 String [] renglon= new String [4];//notar que no es un nro mágico, es la cantidad de columnas del archivo que voy a leer, lo define el formato del archivo que planeo leer
-		 List <Equipo> paises=new ArrayList<Equipo>();
+		System.out.println(partido1.metodoPartido().resultado());
 		
-		 String equipoa="";
-		 String equipob="";
-		 int gola=0;
-		 int golb=0;
-		 int pais1=0;
-		 int pais2=0;
-		 ResultadoEnum estado= ResultadoEnum.empate;
-		 
-		 
-
-
-		 try {  
+		
+	 
 			 
-			 	//List<String> resultados = Files.readAllLines(Paths.get("resultados.txt"));
-			 	List<String> pronosticos = Files.readAllLines(Paths.get("pronostico.txt"));
+			 
+			 
+			 
+			 
+				//Equipo e1
+				
+				//Partido p1= new Partido(Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) 
+//				 int indice = -1;
+//				 int indiceP = -1;
+//				 String [] renglon= new String [4];//notar que no es un nro mágico, es la cantidad de columnas del archivo que voy a leer, lo define el formato del archivo que planeo leer
+//				 List <Equipo> paises=new ArrayList<Equipo>();
+//			 String equipoa="";
+//			 String equipob="";
+//			 int gola=0;
+//			 int golb=0;
+//			 int pais1=0;
+//			 int pais2=0;
+//			 ResultadoEnum estado= ResultadoEnum.empate;
+			 
+			//List<String> resultados = Files.readAllLines(Paths.get("resultados.txt"));
+			 	//List<String> pronosticos = Files.readAllLines(Paths.get("pronostico.txt"));
 			 	//int longitud = resultados.size();
-			 	int longitudP= pronosticos.size();
+			 	//int longitudP= pronosticos.size();
 			 	//hago un arreglo de partidopara hacer la ronda
 			 	//Partido encuentros[]=new Partido [longitud];
 			 	//Ronda ronda1=new Ronda ("1",encuentros);
-			 	
+			 
 			 	//hago un arreglo de pronosticos para hacer pronostico
-			 	Pronostico apuestas[] =new Pronostico[longitudP];
+			 	//Pronostico apuestas[] =new Pronostico[longitudP];
 			 	
 			 	//ahora hago un arraylist con nombre de equipos o países
 			 	
-			 	Equipo equipo1;
-			 	Equipo equipo2;
-			 	int resultadoPuntaje = 0;
-			 	int pronosticoPuntaje = 0;
-			 	
-			 	for(String linea:Files.readAllLines(Paths.get("resultados.txt"))){
-			 		indice=indice+1;
-					renglon=linea.split(" ");
-					 
-						 equipo1 = new Equipo (renglon[0] ,"equipo de futbol");   
-						 equipo2 = new Equipo (renglon[3] ,"equipo de futbol");
-//						System.out.println(equipo1.getNombre());
-//						System.out.println(equipo2.getNombre());
-						
-						//pronostico
-if (Integer.parseInt(renglon[1]) == Integer.parseInt(renglon[2])) {
-	resultadoPuntaje = 1;
-	System.out.println(resultadoPuntaje);
-	}
-	else if (Integer.parseInt(renglon[1]) > Integer.parseInt(renglon[2])) {
-		resultadoPuntaje = 2;
-		System.out.println(resultadoPuntaje);
-	
-}
-	else if (Integer.parseInt(renglon[1]) < Integer.parseInt(renglon[2])) {
-		resultadoPuntaje = 3;
-		System.out.println(resultadoPuntaje);
-	
-}
-						
-						}
-			 	
-			 	for(String linea:Files.readAllLines(Paths.get("pronostico.txt"))){
-			 		indice=indice+1;
-					renglon=linea.split(" ");
-			 	
-					if (Integer.parseInt(renglon[1]) == 1) {
-						pronosticoPuntaje = 2;
-						System.out.println(2);
-						}
-						else if (Integer.parseInt(renglon[2]) == 1) {
-							pronosticoPuntaje = 1;
-							System.out.println(1);
-						
-					}
-						else{
-							pronosticoPuntaje = 3;
-							System.out.println(3);
-						
-					}
-			 	
-			 	
-			 	}
-			 	
-			 	if (pronosticoPuntaje == resultadoPuntaje ) {
-					System.out.println("son iguales");
-				}
-			 	else {
-			 		System.out.println("son distintos");
-			 	}
-			 	
-			 	
+			 				 	
 			 	//}
 											    
 					//guardo los resultados en un arreglo encuentros
@@ -159,12 +104,8 @@ if (Integer.parseInt(renglon[1]) == Integer.parseInt(renglon[2])) {
 //						};
 //				
 //				
-			 } catch(IOException e) {
-				e.printStackTrace();
-				System.out.println("error en la lectura");
-			 };
-//		
-	};
+			
+	}
 		 }
 
 
