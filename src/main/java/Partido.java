@@ -71,15 +71,27 @@ return partido1;
 				+ ", golesEquipo2=" + golesEquipo2 + "]";
 	}
 	
-	public ResultadoEnum resultado() {
+	public ResultadoEnum resultado(Equipo equipo) {
 		
-		if (golesEquipo1 > golesEquipo2) {
-	        return ResultadoEnum.ganador;
-	    } else if (golesEquipo2 > golesEquipo1) {
-	        return ResultadoEnum.perdedor;
-	    } else {
-	        return ResultadoEnum.empate;
-			
+		
+		    if (equipo.equals(equipo1)) {
+		        if (golesEquipo1 > golesEquipo2) {
+		            return ResultadoEnum.ganador;
+		        } else if (golesEquipo2 > golesEquipo1) {
+		            return ResultadoEnum.perdedor;
+		        } else {
+		            return ResultadoEnum.empate;
+		        }
+		    } else if (equipo.equals(equipo2)) {
+		       
+		    	if (golesEquipo2 > golesEquipo1) {
+		            return ResultadoEnum.ganador;
+		        } else if (golesEquipo1 > golesEquipo2) {
+		            return ResultadoEnum.perdedor;
+		        } else {
+		            return ResultadoEnum.empate;
+		        }
 	    }
+			return null;
 	}
 }

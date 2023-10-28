@@ -4,14 +4,14 @@ import java.nio.file.Paths;
 
 public class Logica {
 	
-	public void metodo() {
+	public Ronda numeroDeRonda() {
+		
 		
 	String [] renglon;
-	Equipo equipo2;
-	Equipo equipo1;
+	Ronda [] numeroDeRonda;
  	int resultadoPuntaje = 0;
  	int pronosticoPuntaje = 0;
- 	int ronda = 1;
+ 	Ronda ronda = null;
  	
  	try {
 		for(String linea:Files.readAllLines(Paths.get("resultados.txt"))){
@@ -20,23 +20,21 @@ public class Logica {
 			 
 				 				
 				//pronostico
-if (Integer.parseInt(renglon[1]) == Integer.parseInt(renglon[2])) {
-resultadoPuntaje = 1;
-System.out.println(resultadoPuntaje);
-}
-else if (Integer.parseInt(renglon[1]) > Integer.parseInt(renglon[2])) {
-resultadoPuntaje = 2;
-System.out.println(resultadoPuntaje);
+		if (Integer.parseInt(renglon[1]) == Integer.parseInt(renglon[2])) {
+		resultadoPuntaje = 1;
+		System.out.println(resultadoPuntaje);
+			}
+			else if (Integer.parseInt(renglon[1]) > Integer.parseInt(renglon[2])) {
+		resultadoPuntaje = 2;
+		System.out.println(resultadoPuntaje);
 
-}
-else if (Integer.parseInt(renglon[1]) < Integer.parseInt(renglon[2])) {
-resultadoPuntaje = 3;
-System.out.println(resultadoPuntaje);
-
-}
-				System.out.println("ronda" + ronda);
-				ronda++;
 				}
+			else if (Integer.parseInt(renglon[1]) < Integer.parseInt(renglon[2])) {
+		resultadoPuntaje = 3;
+		System.out.println(resultadoPuntaje);
+
+				}
+		}	
 	} catch (NumberFormatException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -82,5 +80,26 @@ System.out.println(resultadoPuntaje);
  		System.out.println("son distintos");
  	}
  	
+ 	
+ 	
+ 	
+	return null;
+ 	
 }
 }
+//if (Integer.parseInt(renglon[1]) == Integer.parseInt(renglon[2])) {
+//resultadoPuntaje = 1;
+//System.out.println(resultadoPuntaje);
+//}
+//else if (Integer.parseInt(renglon[1]) > Integer.parseInt(renglon[2])) {
+//resultadoPuntaje = 2;
+//System.out.println(resultadoPuntaje);
+//
+//}
+//else if (Integer.parseInt(renglon[1]) < Integer.parseInt(renglon[2])) {
+//resultadoPuntaje = 3;
+//System.out.println(resultadoPuntaje);
+//System.out.println("ronda" + ronda);
+//	ronda++;
+//	}
+//}

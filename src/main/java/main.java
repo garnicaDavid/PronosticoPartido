@@ -4,24 +4,25 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class main {
 
 	public static void main(String[] args) {
 		
+		Ronda rondaActual = new Ronda (null, null);
+		rondaActual = rondaActual.metodoRonda();
+		Partido partido = new Partido(null, null, 0, 0);
+		partido = partido.metodoPartido(); //llamo al metodoPartido dentro de la Clase Partido
+		Equipo numeroDeEquipo = partido.getEquipo2(); //se creo este objeto para poder llamarlo en el resultado enum
+														//si se pone getEquipo1() da el resultado en base al equipo 1, 
+														//si se pone getEquipo2() da el resultado en base al equipo2
 		
-		Partido partido1 = new Partido(null, null, 0, 0);
-		System.out.println(partido1.metodoPartido().getEquipo1().getNombre());
+		System.out.println(rondaActual.getPartidos());
+		System.out.println(rondaActual.getNro());
+		System.out.println(partido.getEquipo1().getNombre());
 		
-		System.out.println(partido1.metodoPartido().resultado());
 		
-		
-	 
-			 
-			 
-			 
-			 
-			 
-				//Equipo e1
+			
 				
 				//Partido p1= new Partido(Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) 
 //				 int indice = -1;
