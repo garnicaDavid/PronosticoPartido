@@ -6,8 +6,13 @@ public class Pronostico {
 	
 	
 	
-	public Pronostico(Partido partido, Equipo equipo, Enum resultado) {
-		// TODO Auto-generated constructor stub
+	
+
+	public Pronostico(Partido partido, Equipo equipo, ResultadoEnum resultado) {
+		super();
+		this.partido = partido;
+		this.equipo = equipo;
+		this.resultado = resultado;
 	}
 
 
