@@ -1,1 +1,2 @@
-Argentina 3 2 Arabia
+Argentina 1 2 Arabia
+Polonia 0 0 Mexico

@@ -16,10 +16,13 @@ public class main {
 		Equipo numeroDeEquipo = partido.getEquipo2(); //se creo este objeto para poder llamarlo en el resultado enum
 														//si se pone getEquipo1() da el resultado en base al equipo 1, 
 														//si se pone getEquipo2() da el resultado en base al equipo2
+		//La logica compara los resultados con el pronostico;
+		Logica logica = new Logica();
+		logica.numeroDeRonda();
 		
-		System.out.println(rondaActual.getPartidos());
-		System.out.println(rondaActual.getNro());
-		System.out.println(partido.getEquipo1().getNombre());
+		//System.out.println(rondaActual.getPartidos());
+		//System.out.println(rondaActual.getNro());
+		//System.out.println(partido.getEquipo1().getNombre());
 		
 		
 			

@@ -52,8 +52,12 @@ public class Ronda {
 	
 		try {
 			for (String linea : Files.readAllLines(Paths.get(listaDePartidos))) {
-				
+					System.out.println("-----------RONDA "+numeroRonda+"-----------");
+					System.out.println("Equipos\t\t|  Cant Goles");
 			        String[] datos = linea.split(" ");
+			        System.out.println(datos[0]+"  \t|\t  "+datos[1]);
+			        System.out.println(datos[3]+"  \t|\t  "+datos[2]);
+			        System.out.print("\n");
 			        if (datos.length == 4) {
 			            
 

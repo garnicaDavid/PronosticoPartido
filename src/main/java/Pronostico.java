@@ -49,4 +49,8 @@ public class Pronostico {
 	public static int puntos() {
 		return 0;
 	}
+	
+	public void metodoPronostico() {
+		
+	}
 }
