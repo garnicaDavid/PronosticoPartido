@@ -5,14 +5,12 @@ import java.util.ArrayList;
 
 public class Logica {
 	
-	
-	
 	public Logica() {
 	}
 
 	public void numeroDeRonda() {
 		
-		
+	Lectura lecturaDePronosticos = new Lectura ();
 	String [] renglon;
 	Ronda [] numeroDeRonda;
 	ArrayList<Integer> resultado = new ArrayList<Integer>();
@@ -23,7 +21,7 @@ public class Logica {
  	Ronda ronda = null;
  	
  	try {
-		for(String linea:Files.readAllLines(Paths.get("resultados.txt"))){
+		for(String linea : lecturaDePronosticos.getLecturaPronostico()){
 			
 			renglon=linea.split(" ");
 				 				
@@ -43,15 +41,12 @@ public class Logica {
 	} catch (NumberFormatException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
 	}
  	System.out.println("\n-------------------PRONOSTICOS-------------------");
  	System.out.println("Equipo1 \tGana1\tEmpate\tGana2\tEquipo2");
  	try {
  		int index=0;
-		for(String linea:Files.readAllLines(Paths.get("pronostico.txt"))){
+		for(String linea : lecturaDePronosticos.getLecturaPronostico()){
 			renglon=linea.split(" ");
 
 			System.out.print(renglon[0]+"  \t");
@@ -89,9 +84,6 @@ public class Logica {
 			index++;
 		}
 	} catch (NumberFormatException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
