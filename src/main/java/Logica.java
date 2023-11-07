@@ -11,6 +11,7 @@ public class Logica {
 	public void numeroDeRonda() {
 		
 	Lectura lecturaDePronosticos = new Lectura ();
+	Lectura lecturaDeResultados = new Lectura ();
 	String [] renglon;
 	Ronda [] numeroDeRonda;
 	ArrayList<Integer> resultado = new ArrayList<Integer>();
@@ -19,9 +20,10 @@ public class Logica {
  	int pronosticoPuntaje = 0;
  	int puntajeTotal =0;
  	Ronda ronda = null;
- 	
+ 	ArrayList<String> datosResultados = new ArrayList<String> (lecturaDePronosticos.getLecturaResultado());
+ 	ArrayList<String> datosPronosticos = new ArrayList<String> (lecturaDePronosticos.getLecturaPronostico());
  	try {
-		for(String linea : lecturaDePronosticos.getLecturaPronostico()){
+		for(String linea : datosResultados){
 			
 			renglon=linea.split(" ");
 				 				
@@ -46,7 +48,7 @@ public class Logica {
  	System.out.println("Equipo1 \tGana1\tEmpate\tGana2\tEquipo2");
  	try {
  		int index=0;
-		for(String linea : lecturaDePronosticos.getLecturaPronostico()){
+		for(String linea : datosPronosticos){
 			renglon=linea.split(" ");
 
 			System.out.print(renglon[0]+"  \t");
