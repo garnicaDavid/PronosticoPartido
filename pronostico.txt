@@ -1,2 +1,8 @@
-Argentina 1 0 0 Arabia_Saudita
-Polonia 0 1 0 Mexico
+Argentina 1 0 0 Arabia Mariana
+Polonia 0 1 0 Mexico Mariana
+Argentina 1 0 0 Mexico Mariana
+Arabia 0 0 1 Polonia Mariana
+Argentina 1 0 0 Arabia Pedro
+Polonia 0 0 1 Mexico Pedro
+Argentina 1 0 0 Mexico Pedro
+Arabia 0 1 0 Polonia Pedro

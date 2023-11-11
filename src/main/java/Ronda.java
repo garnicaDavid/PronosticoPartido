@@ -44,14 +44,15 @@ public class Ronda {
 	
 	Partido partido = new Partido(null, null, 0, 0);
 	Ronda ronda = null;
-	String listaDePartidos = "resultados.txt";
+	//String listaDePartidos = "resultados.txt";
+	Lectura lecturaDeResultados = new Lectura();
 	int contador = 0;
 	List <Ronda> rondas = new ArrayList<>();
 	Ronda rondaActual = null;
 	int numeroRonda = 1;
 	
 		try {
-			for (String linea : Files.readAllLines(Paths.get(listaDePartidos))) {
+			for (String linea : lecturaDeResultados.getLecturaResultado()) {
 					System.out.println("-----------RONDA "+numeroRonda+"-----------");
 					System.out.println("Equipos\t\t|  Cant Goles");
 			        String[] datos = linea.split(" ");
@@ -66,20 +67,18 @@ public class Ronda {
 							rondaActual = new Ronda(null, null);
 			                rondas.add(rondaActual);
 			                rondaActual.setNro(String.valueOf(numeroRonda));
-			                numeroRonda++;
+			                
 			            }
 
 			            rondaActual.agregarPartido(partido.metodoPartido());
 			        
 			    }
+			        numeroRonda++;
 			}
 			
 			
 			
 		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

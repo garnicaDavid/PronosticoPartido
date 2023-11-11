@@ -48,19 +48,15 @@ public class Partido {
 		Equipo equipo1;
 		String [] renglon;
 		Partido partido1 = null;
-try {
-	for(String linea:Files.readAllLines(Paths.get("resultados.txt"))){
-				
-				renglon = linea.split(" ");
-				 
-					 equipo1 = new Equipo (renglon[0] ,"equipo de futbol");   
-					 equipo2 = new Equipo (renglon[3] ,"equipo de futbol");
-		 partido1 = new Partido (equipo1,equipo2,Integer.parseInt(renglon[1]) ,Integer.parseInt(renglon[2]));
-	
-	}
-	
-} catch (IOException e) {
-	e.printStackTrace();
+		Lectura lecturaDeResultados = new Lectura ();
+for(String linea : lecturaDeResultados.getLecturaResultado()){
+			
+			renglon = linea.split(" ");
+			 
+				 equipo1 = new Equipo (renglon[0] ,"equipo de futbol");   
+				 equipo2 = new Equipo (renglon[3] ,"equipo de futbol");
+	 partido1 = new Partido (equipo1,equipo2,Integer.parseInt(renglon[1]) ,Integer.parseInt(renglon[2]));
+
 }
 return partido1;
 }
