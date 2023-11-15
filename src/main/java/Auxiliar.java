@@ -4,6 +4,47 @@ import java.nio.file.Paths;
 public class Auxiliar {
 
 	
+	//TODO LO QUE ESTABA EN LOGICA Y SE MOVIO HACIA CargaDedatos
+	
+// 	try {
+//		for(String linea : datosResultados){
+//			
+//			renglon=linea.split(" ");
+//				 				
+//				//pronostico
+//		if (Integer.parseInt(renglon[1]) == Integer.parseInt(renglon[2])) {
+//		resultado.add(1);
+//			}
+//			else if (Integer.parseInt(renglon[1]) > Integer.parseInt(renglon[2])) {
+//				resultado.add(2);
+//
+//				}
+//			else if (Integer.parseInt(renglon[1]) < Integer.parseInt(renglon[2])) {
+//				resultado.add(3);
+//
+//				}
+//		}	
+//	} catch (NumberFormatException e) {
+
+//		e.printStackTrace();
+//	}
+	
+//		int bandera = 0;
+//		int posicion=0;
+//		for(String linea : datosPronosticos) {
+//		String texto[]=linea.split(" ");
+//		String nombre = texto[5];
+//		if(bandera == 0 || !nombre.equalsIgnoreCase(listaNombres.get(posicion-1).getNombre()) ) {
+//			listaNombres.add(new Persona(nombre,0));
+//			bandera =1;
+//			posicion++;
+//		}
+//	}
+	//-----------------------------------------------------
+	
+	
+	
+	
 	//Partido p1= new Partido(Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) 
 //	 int indice = -1;
 //	 int indiceP = -1;

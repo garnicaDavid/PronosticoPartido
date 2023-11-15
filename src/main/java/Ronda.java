@@ -1,6 +1,4 @@
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,10 +41,7 @@ public class Ronda {
 	
 	
 	Partido partido = new Partido(null, null, 0, 0);
-	Ronda ronda = null;
-	//String listaDePartidos = "resultados.txt";
 	Lectura lecturaDeResultados = new Lectura();
-	int contador = 0;
 	List <Ronda> rondas = new ArrayList<>();
 	Ronda rondaActual = null;
 	int numeroRonda = 1;
@@ -79,7 +74,7 @@ public class Ronda {
 			
 			
 		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return rondaActual;	
