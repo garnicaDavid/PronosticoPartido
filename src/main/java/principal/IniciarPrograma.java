@@ -1,7 +1,8 @@
+package principal;
 
-public class main {
+public class IniciarPrograma {
 	
-	public static void main(String[] args) {
+	public void incioDelPrograma () {
 		
 	//Este metodo muestra todas las rondas y sus resultados
 		Ronda verRondas = new Ronda (null, null);
@@ -10,7 +11,7 @@ public class main {
 	//La logica compara los resultados con el pronostico;
 		Logica logica = new Logica();
 		logica.leerDesdeTxt();
-
+		
 	}
  }
 
