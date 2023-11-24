@@ -1,21 +1,26 @@
 package principal;
 import java.util.ArrayList;
 
+import lectorSql.LeerDesdeBaseDeDatos;
+
 public class Logica {
 	
 	public Logica() {
 	}
 
-	public void leerDesdeTxt() {
+	public void leerDesdeSql() {
 		
 	CargaDeDatos lectorDeDatos= new CargaDeDatos ();	
-	Lectura lecturaDePronosticos = new Lectura ();
+	
+		//Lectura lecturaDePronosticos = new Lectura ();
+	LeerDesdeBaseDeDatos lecturaSql = new LeerDesdeBaseDeDatos();
+	
 	String [] renglon;
 	int pronosticoPuntaje = 0;
  	int puntajeTotal =0;
 	ArrayList<Integer> resultado = new ArrayList<Integer>(lectorDeDatos.GetDatosDeResultados());
  	ArrayList<Persona> listaNombres = new ArrayList<>(lectorDeDatos.getDatosDePersonas());
- 	ArrayList<String> datosPronosticos = new ArrayList<String> (lecturaDePronosticos.getLecturaPronostico());
+ 	ArrayList<String> datosPronosticos = new ArrayList<String> (lecturaSql.getPronosticosSql());
  	
  	System.out.println("\n-------------------PRONOSTICOS-------------------");
  	System.out.println("Equipo1 \tGana1\tEmpate\tGana2\tEquipo2");

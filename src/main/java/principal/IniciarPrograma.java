@@ -10,7 +10,7 @@ public class IniciarPrograma {
 
 	//La logica compara los resultados con el pronostico;
 		Logica logica = new Logica();
-		logica.leerDesdeTxt();
+		logica.leerDesdeSql();
 		
 	}
  }
