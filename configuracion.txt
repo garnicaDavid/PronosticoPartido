@@ -1,0 +1,5 @@
+ganador 2
+perdio 0
+empataron 1
+rondas 2
+fase 4

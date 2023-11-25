@@ -9,10 +9,12 @@ public class Lectura {
 
 	private List <String> lecturaArchivos;
 	private List <String> lecturaPronostico;
+	private List <String> lecturaConfiguracion;
 	
 		public Lectura () {
 			this.lecturaArchivos = new ArrayList <String>();
 			this.lecturaPronostico = new ArrayList<String>();
+			this.lecturaConfiguracion = new ArrayList<String>();
 		}
 
 		public List<String> getLecturaResultado() {
@@ -49,7 +51,18 @@ public class Lectura {
 			}
 			return lecturaPronostico;
 		}
-
+		
+		public List<String> getLecturaConfiguracion() {
+			String listaDeConfiguracion = "configuracion.txt";
+			try {
+				for (String linea : Files.readAllLines(Paths.get(listaDeConfiguracion))) {
+					this.lecturaConfiguracion.add(linea);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return lecturaConfiguracion;
+		}
 		
 		
 	}

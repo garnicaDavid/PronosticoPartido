@@ -6,10 +6,12 @@ public class CargaDeDatos {
 	
 	private List<Integer> datosDeResultados;
 	private List <Persona> datosDePersonas;
+	private List <Integer> datosDeConfiguracion;
 	
 	public CargaDeDatos() {
 		this.datosDeResultados = new ArrayList <Integer>();
 		this.datosDePersonas = new ArrayList <Persona>();
+		this.datosDeConfiguracion = new ArrayList <Integer>();
 	}
 
 	public List<Integer> GetDatosDeResultados () {
@@ -22,14 +24,16 @@ public class CargaDeDatos {
 			for(String linea : datosResultados){
 				
 				renglon=linea.split(" ");
-											
+			//empataron
 			if (Integer.parseInt(renglon[1]) == Integer.parseInt(renglon[2])) {
 				this.datosDeResultados.add(1);
 				}
+			//gano equipo 1
 				else if (Integer.parseInt(renglon[1]) > Integer.parseInt(renglon[2])) {
 					datosDeResultados.add(2);
 
 					}
+			//gano equipo 2
 				else if (Integer.parseInt(renglon[1]) < Integer.parseInt(renglon[2])) {
 					datosDeResultados.add(3);
 
@@ -61,5 +65,18 @@ public class CargaDeDatos {
  			}
  		}
 		return datosDePersonas;
+	}
+	public List<Integer> getDatosDeConfiguracion() {
+		
+		Lectura lecturaDeConfiguracion = new Lectura ();
+		ArrayList<String> datosConfiguracion = new ArrayList<String> (lecturaDeConfiguracion.getLecturaConfiguracion());
+		
+		
+ 		for(String linea : datosConfiguracion) {
+ 			String texto[]=linea.split(" ");
+ 			String puntos = texto[1];
+ 			this.datosDeConfiguracion.add(Integer.parseInt(puntos));
+ 		}
+		return datosDeConfiguracion;
 	}
 }
