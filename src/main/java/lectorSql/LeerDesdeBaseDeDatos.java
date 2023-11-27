@@ -23,13 +23,11 @@ public class LeerDesdeBaseDeDatos {
 			java.sql.Statement consulta = null;
 			
 			try {
-			//ABRIR LA CONEXION
-				System.out.println("ESTABLECIENDO CONEXION");
+			
 													//URL			- 		USUARIO		   -  CONTRASEÑA  - SE LLAMA A LA CLASE CONECTOR
 				conexion = DriverManager.getConnection(ConectorSql.DB_URL,ConectorSql.USER,ConectorSql.PASS);
 				
-				// Ejecutar una consulta
-				System.out.println("\tcreando statment...\n");
+				
 				
 				consulta = conexion.createStatement();
 				String sql;
@@ -49,7 +47,9 @@ public class LeerDesdeBaseDeDatos {
 					String ganaEquipo2 = pronostico.getString("ganaEquipo2");
 					String equipo2 = pronostico.getString("equipo2");
 					String apostadores = pronostico.getString("apostadores");
-					String linea = (equipo1+" "+ ganaEquipo1+" "+empatan+" "+ganaEquipo2+" "+equipo2+" "+apostadores);
+					String ronda = pronostico.getString("ronda");
+					String fase = pronostico.getString("fase");
+					String linea = (equipo1+" "+ ganaEquipo1+" "+empatan+" "+ganaEquipo2+" "+equipo2+" "+apostadores +" "+ronda+" "+fase);
 					this.pronosticosSql.add(linea);
 				}
 				

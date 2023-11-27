@@ -7,7 +7,7 @@ public class Ronda {
 	private String nro;
 	private List<Partido> partidos;	
 	
-	public Ronda(String nro, Partido[] partidos) {
+	public Ronda() {
 		super();
 		this.nro = nro;
 		this.partidos = new ArrayList<>();
@@ -37,49 +37,40 @@ public class Ronda {
 		
 		return 0;
 	}
-	public Ronda metodoRonda () {
-		
 	
+	public ArrayList<Ronda> metodoRonda() {
+		
 	
 	Partido partido = new Partido(null, null, 0, 0);
 	Lectura lecturaDeResultados = new Lectura();
-	List <Ronda> rondas = new ArrayList<>();
+	ArrayList <Ronda> rondas = new ArrayList<>();
 	Ronda rondaActual = null;
-	int numeroRonda = 1;
+	int numeroRonda = 0;
 	
 		try {
 			for (String linea : lecturaDeResultados.getLecturaResultado()) {
-					System.out.println("-----------RONDA "+numeroRonda+"-----------");
-					System.out.println("Equipos\t\t|  Cant Goles");
-			        String[] datos = linea.split(" ");
-			        System.out.println(datos[0]+"  \t|\t  "+datos[1]);
-			        System.out.println(datos[3]+"  \t|\t  "+datos[2]);
-			        System.out.print("\n");
-			        if (datos.length == 4) {
+					String[] datos = linea.split(" ");
+						
+					if (datos.length == 6) {
 			            
 
-			            if (rondaActual == null || Integer.parseInt(rondaActual.getNro())  != numeroRonda) {
+			            if (rondaActual == null || Integer.parseInt(datos[4])  != numeroRonda) {
 			               
-							rondaActual = new Ronda(null, null);
+							rondaActual = new Ronda();
 			                rondas.add(rondaActual);
-			                rondaActual.setNro(String.valueOf(numeroRonda));
+			                rondaActual.setNro(datos[4]);
 			                
 			            }
 
 			            rondaActual.agregarPartido(partido.metodoPartido());
-			        
 			    }
-			        numeroRonda++;
+				
 			}
-			
-			
-			
-		} catch (NumberFormatException e) {
+		}catch (NumberFormatException e) {
 			
 			e.printStackTrace();
 		}
-		return rondaActual;	
-	
+		return rondas;
 		
 		}
 
@@ -88,5 +79,57 @@ public class Ronda {
 	public String toString() {
 		return "Ronda [nro=" + nro + ", partidos=" + partidos + "]";
 	}
+	
+	public void verRondas() {
+		
+		Lectura lecturaDeResultados = new Lectura();
+		int numeroRonda = 0;
+		
+				for (String linea : lecturaDeResultados.getLecturaResultado()) {
+						String[] datos = linea.split(" ");
+						
+						if (numeroRonda != Integer.parseInt(datos[4])) {
+						System.out.println("-----------RONDA "+ datos[4] +"-----------");
+						}
+						System.out.println("Equipos\t\t|  Cant Goles");
+				        System.out.println(datos[0]+"  \t|\t  "+datos[1]);
+				        System.out.println(datos[3]+"  \t|\t  "+datos[2]);
+				        System.out.print("\n");
+				        
+				        numeroRonda=Integer.parseInt(datos[4]);
+  }
+		
+		
+	}	
+	public ArrayList<Integer> cantidadDePartidosPorRonda() {
+		Ronda rondas=new Ronda ();
+	 	ArrayList<Ronda> datosRonda = new ArrayList<>(rondas.metodoRonda());
+	 	int cantidadDePartidos = 0;
+	 	int numeroDeRondaActual=1;
+	 	int numeroDeRondaAnterior =1;
+	 	ArrayList <Integer> cantidadDePartidosPorRonda = new ArrayList <>();
+
+	 	for (Ronda linea : datosRonda) {
+	 		numeroDeRondaActual = Integer.parseInt(linea.getNro());
+	 		
+	 		if(numeroDeRondaAnterior!=numeroDeRondaActual){
+	 			cantidadDePartidosPorRonda.add(cantidadDePartidos);
+	 			cantidadDePartidos = 1;
+	 			
+	 			numeroDeRondaAnterior = Integer.parseInt(linea.getNro());
+	 		}else {
+	 			cantidadDePartidos++;
+	 		}
+	 		
+	 	 
+			
+		}
+	 	cantidadDePartidosPorRonda.add(cantidadDePartidos);
+	
+		return (ArrayList<Integer>) cantidadDePartidosPorRonda;
+
+	}
+	
+
 }
 

@@ -69,7 +69,7 @@ public class CargaDeDatos {
 	public List<Integer> getDatosDeConfiguracion() {
 		
 		Lectura lecturaDeConfiguracion = new Lectura ();
-		ArrayList<String> datosConfiguracion = new ArrayList<String> (lecturaDeConfiguracion.getLecturaConfiguracion());
+		List<String> datosConfiguracion = new ArrayList<String> (lecturaDeConfiguracion.getLecturaConfiguracion());
 		
 		
  		for(String linea : datosConfiguracion) {

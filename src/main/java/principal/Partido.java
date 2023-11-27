@@ -51,8 +51,8 @@ for(String linea : lecturaDeResultados.getLecturaResultado()){
 			
 			renglon = linea.split(" ");
 			 
-				 equipo1 = new Equipo (renglon[0] ,"equipo de futbol");   
-				 equipo2 = new Equipo (renglon[3] ,"equipo de futbol");
+				 equipo1 = new Equipo (renglon[0]);   
+				 equipo2 = new Equipo (renglon[3]);
 	 partido1 = new Partido (equipo1,equipo2,Integer.parseInt(renglon[1]) ,Integer.parseInt(renglon[2]));
 
 }

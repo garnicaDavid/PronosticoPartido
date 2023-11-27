@@ -36,6 +36,7 @@ public class Lectura {
 
 
 		
+		
 		public List<String> getLecturaPronostico() {
 			
 			String listaDePronosticos = "pronostico.txt";
@@ -51,6 +52,8 @@ public class Lectura {
 			}
 			return lecturaPronostico;
 		}
+		
+		
 		
 		public List<String> getLecturaConfiguracion() {
 			String listaDeConfiguracion = "configuracion.txt";

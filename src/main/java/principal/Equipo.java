@@ -7,10 +7,10 @@ public class Equipo {
 	
 	@Override
 	public String toString() {
-		return "Equipo [nombre=" + nombre + ", descripcion=" + descripcion + "]";
+		return "Equipo [nombre=" + nombre +  "]";
 	}
 
-	public Equipo(String nombre, String descripcion) {
+	public Equipo(String nombre) {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}

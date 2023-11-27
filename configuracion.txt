@@ -1,5 +1,3 @@
-ganador 2
-perdio 0
-empataron 1
-rondas 2
-fase 4
+Acierto_Partido 1
+Acierto_Rondas 2
+Acierto_Fase 4
