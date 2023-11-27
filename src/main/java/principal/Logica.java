@@ -21,10 +21,11 @@ public class Logica {
  	int partidosPorRonda=0;
  	int partidosAcertadosPorRonda=0;
  	int contadorDePartidos=0;
+ 	int contadorDePartidosPorFase=0;
  	int partidosAcertadosPorFase=0;
  	int partidosPorFase=0;
- 	int numeroDeFase=0;
  	int indexRonda = 0;
+ 	int indexFase =0;
  	Ronda rondas=new Ronda ();
  	Fase fases=new Fase();
  	ArrayList<Integer> cantidadDeRondasPorFase = new ArrayList<>(fases.cantidadDeRondasPorFase());
@@ -44,6 +45,7 @@ public class Logica {
 		for(String linea : datosPronosticos){
 			renglon=linea.split(" ");
 			contadorDePartidos++;
+			contadorDePartidosPorFase++;
 			System.out.print(renglon[0]+"  \t");
 			
 			for(int i=0;i<3;i++) {
@@ -74,6 +76,7 @@ public class Logica {
 			
 			partidosPorRonda++;
 			partidosPorFase++;
+			
 			//sumatoria de puntos
 			if (pronosticoPuntaje == resultado.get(index)) {
 				System.out.println("  ["+listaNombres.get(persona).getNombre()+" : +"+ datosConfiguracion.get(0) +" ]");
@@ -98,10 +101,11 @@ public class Logica {
 				partidosPorRonda=0;
 				partidosAcertadosPorRonda=0;
 				contadorDePartidos=0;
+				
 			}
 			
 			//AGREGAR PUNTOS EXTRAS POR FASE
-			if(numeroDeFase!=Integer.parseInt(renglon[7])) {
+			if(contadorDePartidosPorFase==cantidadDeRondasPorFase.get(indexFase)) {
 				if (partidosPorFase==partidosAcertadosPorFase) {
 					System.out.println("[Puntaje extra por acertar la fase completa: +"+ datosConfiguracion.get(2)+"]");
 					puntajeTotal= puntajeTotal+datosConfiguracion.get(2);
@@ -109,10 +113,11 @@ public class Logica {
 				}
 				partidosPorFase=0;
 				partidosAcertadosPorFase=0;
+				contadorDePartidosPorFase=0;
 			}
 			
 			
-			numeroDeFase=Integer.parseInt(renglon[7]);
+			
 			
 			
 			

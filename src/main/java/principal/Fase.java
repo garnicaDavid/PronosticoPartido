@@ -27,25 +27,25 @@ public class Fase {
 
 
 	public List<Fase> getRondas() {
-		LeerDesdeBaseDeDatos lecturaSql = new LeerDesdeBaseDeDatos();
+		//LeerDesdeBaseDeDatos lecturaSql = new LeerDesdeBaseDeDatos();
 		Ronda rondas= new Ronda();
-		//Lectura lecturaDeResultados = new Lectura();
+		Lectura lecturaDeResultados = new Lectura();
 		ArrayList <Fase> fase = new ArrayList<>();
 		Fase faseActual = null;
 		int numeroFase = 0;
 		
 			try {
-				for (String linea : lecturaSql.getPronosticosSql()) {
+				for (String linea : lecturaDeResultados.getLecturaResultado()) {
 						String[] datos = linea.split(" ");
 							
-						if (datos.length == 8) {
+						if (datos.length == 6) {
 				            
 
-				            if (faseActual == null || Integer.parseInt(datos[7])  != numeroFase) {
+				            if (faseActual == null || Integer.parseInt(datos[5])  != numeroFase) {
 				               
 				            	faseActual = new Fase();
 				                fase.add(faseActual);
-				                faseActual.setNro(datos[7]);
+				                faseActual.setNro(datos[5]);
 				                
 				            }
 
