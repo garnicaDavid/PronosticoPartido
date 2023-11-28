@@ -31,9 +31,9 @@ public class Lectura {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			
 			return lecturaArchivos;
 		}
-
 
 		
 		

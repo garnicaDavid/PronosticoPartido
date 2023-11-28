@@ -1,0 +1,67 @@
+CANTIDAD DE PUNTOS POR PERSONA QUE DEBERIA DAR:
+PARTIDO +1
+RONDA +2
+FASE +4
+
+M 1
+M 1
++2 x ronda
+
+M 1
+M 1
++2 x ronda
+
+M 1
+M 1
++2 x ronda
++4 x fase
+
+M 1
+M 1
++2 por ronda
+
+M 0
+M 0
+
+total 20
+
+
+P 0
+P 0
+
+P 1
+P 0
+
+P 1
+P 1
++2 x ronda
+
+P 1
+P 1
++2 X RONDA
+
+P 0
+P 0
+
+total 9
+
+J 0
+J 0
+
+J 1
+J 1
++2 X RONDA
+
+J 1
+J 0
+
+J 1
+J 1
++2 por ronda
+
+J 1
+J 1
++2 por ronda
++4 por fase
+
+total 17

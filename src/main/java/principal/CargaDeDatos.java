@@ -2,6 +2,8 @@ package principal;
 import java.util.ArrayList;
 import java.util.List;
 
+import lectorSql.LeerDesdeBaseDeDatos;
+
 public class CargaDeDatos {
 	
 	private List<Integer> datosDeResultados;
@@ -49,8 +51,12 @@ public class CargaDeDatos {
 
 	public List<Persona> getDatosDePersonas () {
 		
-		Lectura lecturaDePronosticos = new Lectura ();
-		ArrayList<String> datosPronosticos = new ArrayList<String> (lecturaDePronosticos.getLecturaPronostico());
+			//Para leer desde txt descomentar y comentar lineas 58 y 59
+		//Lectura lecturaDePronosticos = new Lectura ();
+		//ArrayList<String> datosPronosticos = new ArrayList<String> (lecturaDePronosticos.getLecturaPronostico());
+		
+		LeerDesdeBaseDeDatos lecturaSql = new LeerDesdeBaseDeDatos();
+		ArrayList<String> datosPronosticos = new ArrayList<String> (lecturaSql.getPronosticosSql());
 		
  		int bandera = 0;
  		int posicion=0;
@@ -59,6 +65,7 @@ public class CargaDeDatos {
  			String texto[]=linea.split(" ");
  			String nombre = texto[5];
  			if(bandera == 0 || !nombre.equalsIgnoreCase(this.datosDePersonas.get(posicion-1).getNombre()) ) {
+ 				
  				this.datosDePersonas.add(new Persona(nombre,0));
  				bandera =1;
  	 			posicion++;

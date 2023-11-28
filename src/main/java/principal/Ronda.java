@@ -49,24 +49,25 @@ public class Ronda {
 	
 		try {
 			for (String linea : lecturaDeResultados.getLecturaResultado()) {
-					String[] datos = linea.split(" ");
-						
-					if (datos.length == 6) {
-			            
+						String[] datos = linea.split(" ");
+							
+						if (datos.length == 6) {
+				            
 
-			            if (rondaActual == null || Integer.parseInt(datos[4])  != numeroRonda) {
-			               
-							rondaActual = new Ronda();
-			                rondas.add(rondaActual);
-			                rondaActual.setNro(datos[4]);
-			                
-			            }
+				            if (rondaActual == null || Integer.parseInt(datos[4])  != numeroRonda) {
+				               
+								rondaActual = new Ronda();
+				                rondas.add(rondaActual);
+				                rondaActual.setNro(datos[4]);
+				                
+				            }
 
-			            rondaActual.agregarPartido(partido.metodoPartido());
-			    }
-				
+				            rondaActual.agregarPartido(partido.metodoPartido());
+					
+				}
 			}
-		}catch (NumberFormatException e) {
+			}
+		catch (NumberFormatException e) {
 			
 			e.printStackTrace();
 		}

@@ -26,7 +26,7 @@ public class Fase {
 	}
 
 
-	public List<Fase> getRondas() {
+	public List<Fase> getRondas(){
 		//LeerDesdeBaseDeDatos lecturaSql = new LeerDesdeBaseDeDatos();
 		Ronda rondas= new Ronda();
 		Lectura lecturaDeResultados = new Lectura();

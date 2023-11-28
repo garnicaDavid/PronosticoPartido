@@ -16,7 +16,6 @@ public class PantallaDeInicio extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
 	/**
 	 * Launch the application.
 	 */
@@ -55,12 +54,16 @@ public class PantallaDeInicio extends JFrame {
 		JButton btnMostrarResultados = new JButton("Mostrar resultados");
 		btnMostrarResultados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				IniciarPrograma inicio = new IniciarPrograma();
-				inicio.incioDelPrograma();
+				
+					IniciarPrograma inicio = new IniciarPrograma();
+					inicio.incioDelPrograma();
+								
 			}
 		});
-		btnMostrarResultados.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnMostrarResultados.setBounds(167, 196, 138, 32);
+		btnMostrarResultados.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnMostrarResultados.setBounds(154, 196, 163, 32);
 		contentPane.add(btnMostrarResultados);
+		
+		
 	}
 }
