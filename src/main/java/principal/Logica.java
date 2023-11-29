@@ -1,5 +1,7 @@
 package principal;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import lectorSql.LeerDesdeBaseDeDatos;
 
@@ -142,13 +144,23 @@ public class Logica {
 	}
  	System.out.println("\n-------------------RESULTADO-------------------");
  	for(Persona linea : listaNombres) {
- 		System.out.println("[Puntaje "+linea.getNombre()+" : "+linea.getPuntaje()+"]");
- 		System.out.println();
- 		
- 		
- 		
+ 		System.out.println("[Puntaje "+linea.getNombre()+" : "+linea.getPuntaje()+"]\n");
  		}
+ 	
+ 	//metodo para ordenar de mayor a menor un ArrayList
+ 	Collections.sort(listaNombres, new Comparator<Persona>() {
+ 		@Override
+		public int compare(Persona p1, Persona p2) {
+			return Integer.valueOf(p2.getPuntaje()).compareTo((p1.getPuntaje()));
+		}
+	});
+ 	
+ 	String path = "C:\\Users\\David\\eclipse-workspace\\ProyectoPronostico\\puntajes.txt";
+ 	CrearArchivo archivo = new CrearArchivo();
+ 	archivo.guardar(listaNombres, path);
 	}
+	
+	
 }
 		
 	

@@ -10,11 +10,13 @@ public class Lectura {
 	private List <String> lecturaArchivos;
 	private List <String> lecturaPronostico;
 	private List <String> lecturaConfiguracion;
+	private List <String> lecturaPuntaje;
 	
 		public Lectura () {
 			this.lecturaArchivos = new ArrayList <String>();
 			this.lecturaPronostico = new ArrayList<String>();
 			this.lecturaConfiguracion = new ArrayList<String>();
+			this.lecturaPuntaje = new ArrayList<String>();
 		}
 
 		public List<String> getLecturaResultado() {
@@ -67,6 +69,17 @@ public class Lectura {
 			return lecturaConfiguracion;
 		}
 		
+		public List<String> getLecturaPuntaje() {
+			String listaDePuntaje = "puntajes.txt";
+			try {
+				for (String linea : Files.readAllLines(Paths.get(listaDePuntaje))) {
+					this.lecturaPuntaje.add(linea);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return lecturaPuntaje;
+		}
 		
 	}
 		

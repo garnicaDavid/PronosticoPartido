@@ -25,9 +25,16 @@ public class PantallaDeInicio extends JFrame {
 				try {
 					PantallaDeInicio frame = new PantallaDeInicio();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+					iniciarLogica();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			}
+
+			private void iniciarLogica() {
+				IniciarPrograma inicio = new IniciarPrograma();
+				inicio.incioDelPrograma();
 			}
 		});
 	}
@@ -51,18 +58,30 @@ public class PantallaDeInicio extends JFrame {
 		labelTitulo.setBounds(62, 27, 353, 26);
 		contentPane.add(labelTitulo);
 		
-		JButton btnMostrarResultados = new JButton("Mostrar resultados");
-		btnMostrarResultados.addActionListener(new ActionListener() {
+		//Boton para mostrar por consola
+		JButton btnMostrarConsola = new JButton("Mostrar por consola");
+		btnMostrarConsola.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-					IniciarPrograma inicio = new IniciarPrograma();
-					inicio.incioDelPrograma();
+					
 								
 			}
 		});
-		btnMostrarResultados.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnMostrarResultados.setBounds(154, 196, 163, 32);
-		contentPane.add(btnMostrarResultados);
+		btnMostrarConsola.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnMostrarConsola.setBounds(94, 64, 276, 58);
+		contentPane.add(btnMostrarConsola);
+		
+		
+		//Boton para mostrar por ventana
+		JButton btnMostrarVentana = new JButton("Mostrar por ventana");
+		btnMostrarVentana.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					InterfazMenu menu = new InterfazMenu();
+					menu.iniciarMenu();
+			}
+		});
+		btnMostrarVentana.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnMostrarVentana.setBounds(94, 145, 276, 58);
+		contentPane.add(btnMostrarVentana);
 		
 		
 	}

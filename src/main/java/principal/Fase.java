@@ -3,8 +3,6 @@ package principal;
 import java.util.ArrayList;
 import java.util.List;
 
-import lectorSql.LeerDesdeBaseDeDatos;
-
 public class Fase {
 	private String nro;
 	private List<Ronda> rondas;

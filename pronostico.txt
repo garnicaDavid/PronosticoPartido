@@ -1,8 +1,30 @@
-Argentina 1 0 0 Arabia Mariana
-Polonia 0 1 0 Mexico Mariana
-Argentina 1 0 0 Mexico Mariana
-Arabia 0 0 1 Polonia Mariana
-Argentina 1 0 0 Arabia Pedro
-Polonia 0 0 1 Mexico Pedro
-Argentina 1 0 0 Mexico Pedro
-Arabia 0 1 0 Polonia Pedro
+Argentina 1 0 0 Arabia Mariana 1 1
+Polonia 0 1 0 Mexico Mariana 1 1
+Argentina 1 0 0 Mexico Mariana 2 1
+Arabia 0 0 1 Polonia Mariana 2 1
+Polonia 0 0 1 Argentina Mariana 3 1
+Arabia 0 0 1 Mexico Mariana 3 1
+Holanda 1 0 0 USA Mariana 4 2
+Argentina 1 0 0 Australia Mariana 4 2
+Holanda 0 0 1 Argentina Mariana 5 2
+Craoacia 0 0 1 Brasil Mariana 5 2
+Argentina 1 0 0 Arabia Pedro 1 1
+Polonia 0 0 1 Mexico Pedro 1 1
+Argentina 1 0 0 Mexico Pedro 2 1
+Arabia 0 1 0 Polonia Pedro 2 1
+Polonia 0 0 1 Argentina Pedro 3 1
+Arabia 0 0 1 Mexico Pedro 3 1
+Holanda 1 0 0 USA Pedro 4 2
+Argentina 1 0 0 Australia Pedro 4 2
+Holanda 0 0 1 Argentina Pedro 5 2
+Craoacia 0 0 1 Brasil Pedro 5 2
+Argentina 0 1 0 Arabia Jorge 1 1
+Polonia 1 0 0 Mexico Jorge 1 1
+Argentina 1 0 0 Mexico Jorge 2 1
+Arabia 0 0 1 Polonia Jorge 2 1
+Polonia 0 0 1 Argentina Jorge 3 1
+Arabia 0 1 0 Mexico Jorge 3 1
+Holanda 1 0 0 USA Jorge 4 2
+Argentina 1 0 0 Australia Jorge 4 2
+Holanda 0 1 0 Argentina Jorge 5 2
+Craoacia 0 1 0 Brasil Jorge 5 2
