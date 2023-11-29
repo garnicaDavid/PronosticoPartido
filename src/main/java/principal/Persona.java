@@ -1,8 +1,22 @@
 package principal;
+
+import java.util.ArrayList;
+
 public class Persona {
 	private String nombre;
 	private int puntaje;
+	private ArrayList<Persona> listPersona;
 	
+
+	public ArrayList<Persona> getListPersona() {
+		return listPersona;
+	}
+
+
+	public void setListPersona(ArrayList<Persona> listPersona) {
+		this.listPersona = listPersona;
+	}
+
 
 	public Persona(String nombre, int puntaje) {
 		super();

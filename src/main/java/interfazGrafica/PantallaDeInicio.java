@@ -26,16 +26,11 @@ public class PantallaDeInicio extends JFrame {
 					PantallaDeInicio frame = new PantallaDeInicio();
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
-					iniciarLogica();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 
-			private void iniciarLogica() {
-				IniciarPrograma inicio = new IniciarPrograma();
-				inicio.incioDelPrograma();
-			}
 		});
 	}
 
@@ -62,8 +57,8 @@ public class PantallaDeInicio extends JFrame {
 		JButton btnMostrarConsola = new JButton("Mostrar por consola");
 		btnMostrarConsola.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					
-								
+				IniciarPrograma inicio = new IniciarPrograma();
+				inicio.incioDelPrograma();
 			}
 		});
 		btnMostrarConsola.setFont(new Font("Tahoma", Font.PLAIN, 14));

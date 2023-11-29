@@ -11,6 +11,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import principal.Lectura;
+import principal.Logica;
+import principal.Persona;
+
 import javax.swing.JTable;
 import java.awt.Color;
 import java.awt.Font;
@@ -68,12 +71,18 @@ public class InterfazPuntajes extends JFrame {
 				//nombre de las columnas
 				String titulos[] = {"Participante", "Puntaje"};
 				modeloTabla.setColumnIdentifiers(titulos);
-				Lectura lectura = new Lectura();
-				ArrayList<String> puntajes = new ArrayList<>(lectura.getLecturaPuntaje());
-				String vector[];
-				for(String linea : puntajes) {
-					vector = linea.split(" ");
-					Object[] objeto = {"   "+vector[0], "       "+vector[1]};
+//				Lectura lectura = new Lectura();
+//				ArrayList<String> puntajes = new ArrayList<>(lectura.getLecturaPuntaje());
+//				String vector[];
+//				for(String linea : puntajes) {
+//					vector = linea.split(" ");
+//					Object[] objeto = {"   "+vector[0], "       "+vector[1]};
+//					modeloTabla.addRow(objeto);
+//				}
+				Logica logica = new Logica();
+				ArrayList<Persona> listaPersona = new ArrayList<Persona>(logica.leerDesdeSql());
+				for (Persona persona : listaPersona) {
+					Object[] objeto = {"    "+persona.getNombre(),"    "+persona.getPuntaje()};
 					modeloTabla.addRow(objeto);
 				}
 				tablaPuntajes.setModel(modeloTabla);

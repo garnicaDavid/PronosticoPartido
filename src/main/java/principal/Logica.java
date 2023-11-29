@@ -10,7 +10,7 @@ public class Logica {
 	public Logica() {
 	}
 
-	public void leerDesdeSql() {
+	public ArrayList<Persona> leerDesdeSql() {
 		
 	CargaDeDatos lectorDeDatos= new CargaDeDatos ();	
 	
@@ -155,11 +155,8 @@ public class Logica {
 		}
 	});
  	
- 	String path = "C:\\Users\\David\\eclipse-workspace\\ProyectoPronostico\\puntajes.txt";
- 	CrearArchivo archivo = new CrearArchivo();
- 	archivo.guardar(listaNombres, path);
+	return listaNombres;
 	}
-	
 	
 }
 		
