@@ -1,4 +1,4 @@
-Argentina 1 0 0 Arabia Mariana 1 1
+Argentina 0 0 1 Arabia Mariana 1 1
 Polonia 0 1 0 Mexico Mariana 1 1
 Argentina 1 0 0 Mexico Mariana 2 1
 Arabia 0 0 1 Polonia Mariana 2 1

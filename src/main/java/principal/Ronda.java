@@ -81,27 +81,6 @@ public class Ronda {
 		return "Ronda [nro=" + nro + ", partidos=" + partidos + "]";
 	}
 	
-	public void verRondas() {
-		
-		Lectura lecturaDeResultados = new Lectura();
-		int numeroRonda = 0;
-		
-				for (String linea : lecturaDeResultados.getLecturaResultado()) {
-						String[] datos = linea.split(" ");
-						
-						if (numeroRonda != Integer.parseInt(datos[4])) {
-						System.out.println("-----------RONDA "+ datos[4] +"-----------");
-						}
-						System.out.println("Equipos\t\t|  Cant Goles");
-				        System.out.println(datos[0]+"  \t|\t  "+datos[1]);
-				        System.out.println(datos[3]+"  \t|\t  "+datos[2]);
-				        System.out.print("\n");
-				        
-				        numeroRonda=Integer.parseInt(datos[4]);
-  }
-		
-		
-	}	
 	public ArrayList<Integer> cantidadDePartidosPorRonda() {
 		Ronda rondas=new Ronda ();
 	 	ArrayList<Ronda> datosRonda = new ArrayList<>(rondas.metodoRonda());

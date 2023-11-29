@@ -57,8 +57,8 @@ public class PantallaDeInicio extends JFrame {
 		JButton btnMostrarConsola = new JButton("Mostrar por consola");
 		btnMostrarConsola.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				IniciarPrograma inicio = new IniciarPrograma();
-				inicio.incioDelPrograma();
+				IniciarPrograma logica = new IniciarPrograma();
+				logica.incioDelPrograma();
 			}
 		});
 		btnMostrarConsola.setFont(new Font("Tahoma", Font.PLAIN, 14));

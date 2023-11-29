@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import principal.Lectura;
 import principal.Logica;
 import principal.Persona;
 
@@ -30,6 +29,7 @@ public class InterfazPuntajes extends JFrame {
 	private JLabel lblImagen;
 	private JTextField textNombre;
 	private JTextField textPuntaje;
+	private JTextField txtPuesto;
 
 	/**
 	 * Launch the application.
@@ -69,21 +69,16 @@ public class InterfazPuntajes extends JFrame {
 					}
 				};
 				//nombre de las columnas
-				String titulos[] = {"Participante", "Puntaje"};
+				String titulos[] = {"Puesto","Participante", "Puntaje"};
 				modeloTabla.setColumnIdentifiers(titulos);
-//				Lectura lectura = new Lectura();
-//				ArrayList<String> puntajes = new ArrayList<>(lectura.getLecturaPuntaje());
-//				String vector[];
-//				for(String linea : puntajes) {
-//					vector = linea.split(" ");
-//					Object[] objeto = {"   "+vector[0], "       "+vector[1]};
-//					modeloTabla.addRow(objeto);
-//				}
 				Logica logica = new Logica();
 				ArrayList<Persona> listaPersona = new ArrayList<Persona>(logica.leerDesdeSql());
+				logica.ordenarPorPuntos(listaPersona);
+				int puesto =1;
 				for (Persona persona : listaPersona) {
-					Object[] objeto = {"    "+persona.getNombre(),"    "+persona.getPuntaje()};
+					Object[] objeto = {"         "+puesto,"  "+persona.getNombre(),"       "+persona.getPuntaje()};
 					modeloTabla.addRow(objeto);
+					puesto++;
 				}
 				tablaPuntajes.setModel(modeloTabla);
 			}
@@ -98,13 +93,22 @@ public class InterfazPuntajes extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		txtPuesto = new JTextField();
+		txtPuesto.setText("Puesto");
+		txtPuesto.setHorizontalAlignment(SwingConstants.CENTER);
+		txtPuesto.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		txtPuesto.setEditable(false);
+		txtPuesto.setColumns(10);
+		txtPuesto.setBounds(20, 154, 100, 30);
+		contentPane.add(txtPuesto);
+		
 		textPuntaje = new JTextField();
 		textPuntaje.setEditable(false);
 		textPuntaje.setText("Puntaje");
 		textPuntaje.setHorizontalAlignment(SwingConstants.CENTER);
 		textPuntaje.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		textPuntaje.setColumns(10);
-		textPuntaje.setBounds(167, 155, 100, 30);
+		textPuntaje.setBounds(220, 154, 100, 30);
 		contentPane.add(textPuntaje);
 		
 		textNombre = new JTextField();
@@ -112,13 +116,13 @@ public class InterfazPuntajes extends JFrame {
 		textNombre.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		textNombre.setHorizontalAlignment(SwingConstants.CENTER);
 		textNombre.setText("Nombre");
-		textNombre.setBounds(66, 155, 100, 30);
+		textNombre.setBounds(119, 154, 100, 30);
 		contentPane.add(textNombre);
 		textNombre.setColumns(10);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255,0));
-		panel.setBounds(66, 185, 254, 188);
+		panel.setBounds(20, 185, 300, 188);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -130,7 +134,7 @@ public class InterfazPuntajes extends JFrame {
 		tablaPuntajes.setRowHeight(30);
 		tablaPuntajes.setFont(new Font("Calibri", Font.PLAIN, 20));
 		tablaPuntajes.setBackground(new Color(255, 215, 0, 100));
-		tablaPuntajes.setBounds(0, 0, 200, 90);
+		tablaPuntajes.setBounds(0, 0, 300, 90);
 		panel.add(tablaPuntajes);
 		
 		lblImagen = new JLabel("");
@@ -138,5 +142,4 @@ public class InterfazPuntajes extends JFrame {
 		lblImagen.setBounds(0, 0, 624, 461);
 		contentPane.add(lblImagen);
 	}
-
 }
