@@ -12,6 +12,8 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import principal.IniciarPrograma;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 public class PantallaDeInicio extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -40,7 +42,7 @@ public class PantallaDeInicio extends JFrame {
 	public PantallaDeInicio() {
 		getContentPane().setLayout(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 300);
+		setBounds(100, 100, 837, 430);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -48,9 +50,10 @@ public class PantallaDeInicio extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel labelTitulo = new JLabel("Bienvenido al sistema de puntos del Grupo 8");
-		labelTitulo.setFont(new Font("Tahoma", Font.BOLD, 14));
+		labelTitulo.setForeground(new Color(255, 255, 255));
+		labelTitulo.setFont(new Font("Tahoma", Font.BOLD, 33));
 		labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		labelTitulo.setBounds(62, 27, 353, 26);
+		labelTitulo.setBounds(36, 43, 760, 75);
 		contentPane.add(labelTitulo);
 		
 		//Boton para mostrar por consola
@@ -61,8 +64,8 @@ public class PantallaDeInicio extends JFrame {
 				logica.incioDelPrograma();
 			}
 		});
-		btnMostrarConsola.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnMostrarConsola.setBounds(94, 64, 276, 58);
+		btnMostrarConsola.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnMostrarConsola.setBounds(275, 129, 276, 58);
 		contentPane.add(btnMostrarConsola);
 		
 		
@@ -74,9 +77,14 @@ public class PantallaDeInicio extends JFrame {
 					menu.iniciarMenu();
 			}
 		});
-		btnMostrarVentana.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnMostrarVentana.setBounds(94, 145, 276, 58);
+		btnMostrarVentana.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnMostrarVentana.setBounds(275, 210, 276, 58);
 		contentPane.add(btnMostrarVentana);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("D:\\PROGRAMACION\\Tps-UTN\\TpFinal\\PronosticoPartido\\img\\inicio.jpg"));
+		lblNewLabel.setBounds(0, -173, 821, 564);
+		contentPane.add(lblNewLabel);
 		
 		
 	}

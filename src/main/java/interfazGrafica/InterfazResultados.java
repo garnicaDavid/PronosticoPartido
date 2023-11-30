@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import lectorSql.LeerDesdeBaseDeDatos;
 import principal.Lectura;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -78,8 +80,13 @@ public class InterfazResultados extends JFrame {
 				//nombre de las columnas
 				String titulos[] = {"Equipo 1", "Goles 1", "Goles 2", "Equipo 2"};
 				modeloTabla.setColumnIdentifiers(titulos);
-				Lectura lectura = new Lectura();
-				ArrayList<String> resultado = new ArrayList<>(lectura.getLecturaResultado());
+				LeerDesdeBaseDeDatos lectura = new LeerDesdeBaseDeDatos ();
+				ArrayList<String> resultado = new ArrayList<>(lectura.getResultadosSql());
+				
+				//para leer desde txt descomentar lineas 88/89 y comentar lineas 75/76
+				
+				//Lectura lectura = new Lectura();
+				//ArrayList<String> resultado = new ArrayList<>(lectura.getLecturaResultado());
 				String vector[];
 				for(String linea : resultado) {
 					vector= linea.split(" ");
@@ -169,7 +176,7 @@ public class InterfazResultados extends JFrame {
 		JLabel lblImagen = new JLabel("");
 		lblImagen.setBackground(new Color(0, 128, 192));
 		lblImagen.setHorizontalAlignment(SwingConstants.CENTER);
-		lblImagen.setIcon(new ImageIcon("C:\\Users\\David\\eclipse-workspace\\ProyectoPronostico\\img\\resultados.jpg"));
+		lblImagen.setIcon(new ImageIcon("img\\resultados.jpg"));
 		lblImagen.setBounds(0, 0, 640, 500);
 		contentPane.add(lblImagen);
 	}

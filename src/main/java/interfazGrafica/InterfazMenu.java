@@ -88,7 +88,7 @@ public class InterfazMenu extends JFrame {
 		panel.add(btnResultados);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\David\\eclipse-workspace\\ProyectoPronostico\\img\\menu.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("img\\menu.jpg"));
 		lblNewLabel.setBounds(0, 0, 624, 461);
 		contentPane.add(lblNewLabel);
 	}

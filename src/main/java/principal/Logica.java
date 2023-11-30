@@ -178,7 +178,7 @@ public int verRondas() {
 				
 			}
 			
-			//AGREGAR PUNTOS EXTRA POR RONDA
+				//AGREGAR PUNTOS EXTRA POR RONDA
 			//el if empieza cuando la cantidad de partidos es igual a la cantidad de partidos por ronda y se reinicia al final del if
 			//si la cantidad de partidos por ronda = a la cantidad de partidos que acertaste, suma puntos
 			if(contadorDePartidos==cantidadDePartidosPorRonda.get(indexRonda)) {
@@ -195,7 +195,7 @@ public int verRondas() {
 			if (indexRonda==cantidadDePartidosPorRonda.size()) {
 				indexRonda=0;
 			}
-			//AGREGAR PUNTOS EXTRAS POR FASE
+				//AGREGAR PUNTOS EXTRAS POR FASE
 			//el if empieza cuando la cantidad de rondas es igual a la cantidad de rondas por fase y se reinicia al final del if
 			//si la cantidad de rondas por fase = a la cantidad de rondas que acertaste, suma puntos
 			if(contadorDePartidosPorFase==cantidadDeRondasPorFase.get(indexFase)) {

@@ -71,6 +71,8 @@ public class InterfazPuntajes extends JFrame {
 				//nombre de las columnas
 				String titulos[] = {"Puesto","Participante", "Puntaje"};
 				modeloTabla.setColumnIdentifiers(titulos);
+				
+				
 				Logica logica = new Logica();
 				ArrayList<Persona> listaPersona = new ArrayList<Persona>(logica.leerDesdeSql());
 				logica.ordenarPorPuntos(listaPersona);
@@ -138,7 +140,7 @@ public class InterfazPuntajes extends JFrame {
 		panel.add(tablaPuntajes);
 		
 		lblImagen = new JLabel("");
-		lblImagen.setIcon(new ImageIcon("C:\\Users\\David\\eclipse-workspace\\ProyectoPronostico\\img\\puntajes.jpg"));
+		lblImagen.setIcon(new ImageIcon("img\\puntajes.jpg"));
 		lblImagen.setBounds(0, 0, 624, 461);
 		contentPane.add(lblImagen);
 	}

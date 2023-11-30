@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import lectorSql.LeerDesdeBaseDeDatos;
 import principal.Lectura;
 
 import javax.swing.JTable;
@@ -70,8 +71,13 @@ public class InterfazPronosticos extends JFrame {
 						//nombre de las columnas
 						String titulos[] = {"Participante","Equipo 1", "Gana 1", "Empata", "Gana 2", "Equipo 2","Ronda","Fase"};
 						modeloTabla.setColumnIdentifiers(titulos);
-						Lectura lectura = new Lectura();
-						ArrayList<String> pronostico = new ArrayList<>(lectura.getLecturaPronostico());
+						
+						LeerDesdeBaseDeDatos lectura = new LeerDesdeBaseDeDatos ();
+						ArrayList<String> pronostico = new ArrayList<>(lectura.getPronosticosSql());
+						
+						//para leer desde txt descomentar lineas 79/80 y comentar lineas 75/76
+						//Lectura lectura = new Lectura();
+						//ArrayList<String> pronostico = new ArrayList<>(lectura.getLecturaPronostico());
 						String vector[];
 						int num1, num2;
 						for(String linea : pronostico) {
@@ -116,7 +122,7 @@ public class InterfazPronosticos extends JFrame {
 		scrollPane.setViewportView(tablaPronostico);
 		
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\David\\eclipse-workspace\\ProyectoPronostico\\img\\pronosticos.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("img\\pronosticos.jpg"));
 		lblNewLabel.setBounds(0, 0, 638, 499);
 		contentPane.add(lblNewLabel);
 		
