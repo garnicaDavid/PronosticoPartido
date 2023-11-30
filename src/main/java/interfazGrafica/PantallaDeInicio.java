@@ -42,18 +42,25 @@ public class PantallaDeInicio extends JFrame {
 	public PantallaDeInicio() {
 		getContentPane().setLayout(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 837, 430);
+		setBounds(100, 100, 640, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel labelTitulo = new JLabel("Bienvenido al sistema de puntos del Grupo 8");
+		JLabel lblDelGrupoN = new JLabel("del Grupo N°8");
+		lblDelGrupoN.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDelGrupoN.setForeground(Color.WHITE);
+		lblDelGrupoN.setFont(new Font("Tahoma", Font.BOLD, 33));
+		lblDelGrupoN.setBounds(10, 53, 604, 58);
+		contentPane.add(lblDelGrupoN);
+		
+		JLabel labelTitulo = new JLabel("Bienvenido al sistema de puntos");
 		labelTitulo.setForeground(new Color(255, 255, 255));
 		labelTitulo.setFont(new Font("Tahoma", Font.BOLD, 33));
 		labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		labelTitulo.setBounds(36, 43, 760, 75);
+		labelTitulo.setBounds(10, 11, 604, 58);
 		contentPane.add(labelTitulo);
 		
 		//Boton para mostrar por consola
@@ -65,7 +72,7 @@ public class PantallaDeInicio extends JFrame {
 			}
 		});
 		btnMostrarConsola.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnMostrarConsola.setBounds(275, 129, 276, 58);
+		btnMostrarConsola.setBounds(160, 142, 300, 80);
 		contentPane.add(btnMostrarConsola);
 		
 		
@@ -78,12 +85,12 @@ public class PantallaDeInicio extends JFrame {
 			}
 		});
 		btnMostrarVentana.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnMostrarVentana.setBounds(275, 210, 276, 58);
+		btnMostrarVentana.setBounds(160, 274, 300, 80);
 		contentPane.add(btnMostrarVentana);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("D:\\PROGRAMACION\\Tps-UTN\\TpFinal\\PronosticoPartido\\img\\inicio.jpg"));
-		lblNewLabel.setBounds(0, -173, 821, 564);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("img\\inicio.jpg"));
+		lblNewLabel.setBounds(0, 0, 624, 461);
 		contentPane.add(lblNewLabel);
 		
 		

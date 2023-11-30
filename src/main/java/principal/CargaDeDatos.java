@@ -16,7 +16,7 @@ public class CargaDeDatos {
 		this.datosDeConfiguracion = new ArrayList <Integer>();
 	}
 
-	public List<Integer> GetDatosDeResultados () {
+	public List<Integer> getDatosDeResultados () {
 		
 		String [] renglon;
 		

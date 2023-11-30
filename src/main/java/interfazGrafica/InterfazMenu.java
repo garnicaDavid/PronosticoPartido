@@ -39,7 +39,7 @@ public class InterfazMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public InterfazMenu() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 640, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

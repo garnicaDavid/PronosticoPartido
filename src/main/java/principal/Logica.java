@@ -136,7 +136,7 @@ public int verRondas() {
  	Fase fases=new Fase();
  	
  	ArrayList<Integer> cantidadDeRondasPorFase = new ArrayList<>(fases.cantidadDeRondasPorFase()); //array que tiene la cantidad de rondas por fase
- 	ArrayList<Integer> resultado = new ArrayList<Integer>(lectorDeDatos.GetDatosDeResultados());
+ 	ArrayList<Integer> resultado = new ArrayList<Integer>(lectorDeDatos.getDatosDeResultados());
  	ArrayList<Persona> listaNombres = new ArrayList<>(lectorDeDatos.getDatosDePersonas());
  	ArrayList<String> datosPronosticos = new ArrayList<String> (lecturaSql.getPronosticosSql());
  	ArrayList<Integer> datosConfiguracion = new ArrayList<Integer> (lectorDeDatos.getDatosDeConfiguracion());

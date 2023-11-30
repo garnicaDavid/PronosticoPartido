@@ -97,7 +97,7 @@ public class InterfazPronosticos extends JFrame {
 								vector[2] ="";
 								vector[3] ="          X";
 							}
-							Object[] objeto = {vector[5],vector[0],vector[1],vector[2],vector[3],vector[4],vector[6],vector[7]};
+							Object[] objeto = {vector[5],vector[0],vector[1],vector[2],vector[3],vector[4],"         "+vector[6],"         "+vector[7]};
 							modeloTabla.addRow(objeto);
 						}
 						tablaPronostico.setModel(modeloTabla);
@@ -114,10 +114,11 @@ public class InterfazPronosticos extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setEnabled(false);
-		scrollPane.setBounds(27, 65, 590, 296);
+		scrollPane.setBounds(27, 65, 590, 286);
 		contentPane.add(scrollPane);
 		
 		tablaPronostico = new JTable();
+		tablaPronostico.setRowHeight(22);
 		tablaPronostico.setEnabled(false);
 		scrollPane.setViewportView(tablaPronostico);
 		
