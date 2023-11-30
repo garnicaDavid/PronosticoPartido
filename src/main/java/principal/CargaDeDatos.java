@@ -19,8 +19,14 @@ public class CargaDeDatos {
 	public List<Integer> GetDatosDeResultados () {
 		
 		String [] renglon;
-		Lectura lecturaDeResultados = new Lectura ();
-		ArrayList<String> datosResultados = new ArrayList<String> (lecturaDeResultados.getLecturaResultado());
+		
+		LeerDesdeBaseDeDatos resultadosSql = new LeerDesdeBaseDeDatos();
+		ArrayList<String> datosResultados = new ArrayList<String> (resultadosSql.getResultadosSql());
+		
+			//Para leer desde txt descomentar renglon 28-29 y comentar los renglones 23-24 
+		
+		//Lectura lecturaDeResultados = new Lectura ();
+		//ArrayList<String> datosResultados = new ArrayList<String> (lecturaDeResultados.getLecturaResultado());
 				
 		try {
 			for(String linea : datosResultados){
@@ -75,8 +81,13 @@ public class CargaDeDatos {
 	}
 	public List<Integer> getDatosDeConfiguracion() {
 		
-		Lectura lecturaDeConfiguracion = new Lectura ();
-		List<String> datosConfiguracion = new ArrayList<String> (lecturaDeConfiguracion.getLecturaConfiguracion());
+		LeerDesdeBaseDeDatos lecturaSql = new LeerDesdeBaseDeDatos();
+		ArrayList<String> datosConfiguracion = new ArrayList<String> (lecturaSql.getConfiguracionSql());
+		
+			//Para leer desde txt descomentar y comentar lineas 89/90
+		
+		//Lectura lecturaDeConfiguracion = new Lectura ();
+		//List<String> datosConfiguracion = new ArrayList<String> (lecturaDeConfiguracion.getLecturaConfiguracion());
 		
 		
  		for(String linea : datosConfiguracion) {
